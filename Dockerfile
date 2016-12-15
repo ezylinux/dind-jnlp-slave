@@ -30,4 +30,4 @@ VOLUME $JENKINS_HOME
 WORKDIR $JENKINS_HOME
 
 USER jenkins
-ENTRYPOINT ["jenkins-slave"]
+ENTRYPOINT ["/usr/local/bin/jenkins-slave"]
