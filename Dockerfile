@@ -19,12 +19,12 @@ RUN adduser -D -h $JENKINS_HOME -s /bin/sh jenkins jenkins \
     && echo "jenkins ALL=(ALL) NOPASSWD: /usr/local/bin/docker" > /etc/sudoers.d/10-jenkins \
     && chmod 440 /etc/sudoers.d/10-jenkins
 
+COPY jenkins-slave /usr/local/bin/jenkins-slave
+
 # Install Jenkins Remoting agent
 RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar http://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/$JENKINS_REMOTNG_VERSION/remoting-$JENKINS_REMOTNG_VERSION.jar \
-    && chmod 755 /usr/share/jenkins \
+    && chmod 755 /usr/share/jenkins /usr/local/bin/jenkins-slave\
     && chmod 644 /usr/share/jenkins/slave.jar
-
-COPY jenkins-slave /usr/local/bin/jenkins-slave
 
 VOLUME $JENKINS_HOME
 WORKDIR $JENKINS_HOME
