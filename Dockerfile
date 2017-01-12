@@ -1,4 +1,4 @@
-FROM docker:1.12.4-dind
+FROM docker:1.12.6-dind
 MAINTAINER Peerapach <tum@ezylinux.com>
 
 ENV JENKINS_HOME /home/jenkins
