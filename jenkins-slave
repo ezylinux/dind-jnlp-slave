@@ -49,7 +49,7 @@ else
   sudo dockerd \
          --host=unix:///var/run/docker.sock \
          --host=tcp://0.0.0.0:2375 \
-         --storage-driver=vfs \ 
+         --storage-driver=vfs \
          --bip=10.255.250.1/28 &
 
   exec java $JAVA_OPTS \
