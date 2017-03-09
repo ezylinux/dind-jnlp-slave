@@ -3,6 +3,8 @@ MAINTAINER Peerapach <tum@ezylinux.com>
 
 ENV JENKINS_HOME /home/jenkins
 ENV JENKINS_REMOTNG_VERSION 3.2
+ENV http_proxy http://proxy.true.th:80
+ENV https_proxy http://proxy.true.th:80
 
 ENV DOCKER_HOST tcp://0.0.0.0:2375
 
