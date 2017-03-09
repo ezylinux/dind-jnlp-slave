@@ -3,8 +3,7 @@ MAINTAINER Peerapach <tum@ezylinux.com>
 
 ENV JENKINS_HOME /home/jenkins
 ENV JENKINS_REMOTNG_VERSION 3.2
-ENV http_proxy http://proxy.true.th:80
-ENV https_proxy http://proxy.true.th:80
+
 
 ENV DOCKER_HOST tcp://0.0.0.0:2375
 
@@ -32,6 +31,9 @@ RUN curl -sSLo /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-
 RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar http://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/$JENKINS_REMOTNG_VERSION/remoting-$JENKINS_REMOTNG_VERSION.jar \
     && chmod 755 /usr/share/jenkins /usr/local/bin/jenkins-slave\
     && chmod 644 /usr/share/jenkins/slave.jar
+
+ENV http_proxy http://proxy.true.th:80
+ENV https_proxy http://proxy.true.th:80
 
 VOLUME $JENKINS_HOME
 WORKDIR $JENKINS_HOME
