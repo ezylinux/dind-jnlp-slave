@@ -17,6 +17,7 @@ RUN apk --update add \
 RUN adduser -D -h $JENKINS_HOME -s /bin/sh jenkins jenkins \
     && chmod a+rwx $JENKINS_HOME \
     && echo "jenkins ALL=(ALL) NOPASSWD: /usr/local/bin/docker" > /etc/sudoers.d/10-jenkins \
+    && echo "jenkins ALL=(ALL) NOPASSWD: /usr/local/bin/dockerd" >> /etc/sudoers.d/10-jenkins \
     && chmod 440 /etc/sudoers.d/10-jenkins
 
 COPY Bangkok /usr/share
