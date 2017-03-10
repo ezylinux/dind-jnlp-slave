@@ -2,7 +2,7 @@ FROM docker:1.12.1-dind
 MAINTAINER Peerapach <tum@ezylinux.com>
 
 ENV JENKINS_HOME /home/jenkins
-ENV JENKINS_REMOTNG_VERSION 3.2
+ENV JENKINS_REMOTNG_VERSION 3.7
 
 ENV DOCKER_HOST tcp://0.0.0.0:2375
 
