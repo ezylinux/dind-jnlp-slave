@@ -50,7 +50,7 @@ else
          --host=unix:///var/run/docker.sock \
          --host=tcp://0.0.0.0:2375 \
          --storage-driver=overlay \
-         --bip=192.168.255.241/28 &
+         $DOCKER_OPTS &
 
   exec java $JAVA_OPTS \
          -cp /usr/share/jenkins/slave.jar hudson.remoting.jnlp.Main \
